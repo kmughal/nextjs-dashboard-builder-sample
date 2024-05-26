@@ -1,4 +1,7 @@
 'use client';
+
+import React from "react";
+
 export type CategoryItem = {
   id: number;
   name: string;
@@ -19,8 +22,16 @@ export function CategoryViewer({
   categoryDetails: CategoryItems;
   onClick?: (id: number) => void;
 }>) {
+  const [hydrated, setHydrated] = React.useState(false);
+  React.useEffect(() => {
+      setHydrated(true);
+  }, []);
+  if (!hydrated) {
+      // Returns null on first render, so the client and server match
+      return null;
+  }
   return (
-    <div className="text-left" suppressHydrationWarning>
+    <div className="text-left">
       <h2 className="text-2xl font-medium">{categoryDetails.title}</h2>
       <p className="text-gray-500 mt-2 text-sm mb-5">
         {categoryDetails.description}

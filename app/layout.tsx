@@ -25,6 +25,7 @@ export default function RootLayout({
           inter.className +
           'flex justify-center m-auto w-1/2 text-center bg-gray-200 p-5'
         }
+        suppressHydrationWarning
       >
         <header>
           <div className="flex flex-col text-black">
