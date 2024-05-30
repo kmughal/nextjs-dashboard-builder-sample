@@ -1,6 +1,6 @@
 'use client';
 
-import React from "react";
+import React from 'react';
 
 export type CategoryItem = {
   id: number;
@@ -24,11 +24,11 @@ export function CategoryViewer({
 }>) {
   const [hydrated, setHydrated] = React.useState(false);
   React.useEffect(() => {
-      setHydrated(true);
+    setHydrated(true);
   }, []);
   if (!hydrated) {
-      // Returns null on first render, so the client and server match
-      return null;
+    // Returns null on first render, so the client and server match
+    return null;
   }
   return (
     <div className="text-left">
@@ -36,7 +36,7 @@ export function CategoryViewer({
       <p className="text-gray-500 mt-2 text-sm mb-5">
         {categoryDetails.description}
       </p>
-      <div className="grid grid-cols-2 gap-4 border ml-5 mx-auto">
+      <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 border lg:ml-5 md:ml-5 sm:ml-[-5] mx-auto">
         {categoryDetails.items.map((item) => (
           <div
             key={item.id}
@@ -45,7 +45,7 @@ export function CategoryViewer({
               onClick && onClick(item.id);
             }}
           >
-            <div className="border border-gray-200 m-4 rounded bg-gray-200 w-36 h-20"></div>
+            <div className="border border-gray-200 m-2 rounded bg-gray-200 w-[140px] h-20 hidden lg:block"></div>
 
             <div className="flex flex-col justify-center">
               <h3 className="font-medium">{item.name}</h3>

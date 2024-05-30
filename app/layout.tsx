@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={
           inter.className +
-          'flex justify-center m-auto w-1/2 text-center bg-gray-200 p-5'
+          'flex justify-center m-auto lg:w-1/2 w-screen text-center bg-gray-200 p-5'
         }
         suppressHydrationWarning
       >
@@ -40,24 +40,24 @@ export default function RootLayout({
             </p>
             <SearchBy path={pathname} />
             <nav>
-              <ul className="flex flex-row mt-5 justify-between bg-gray-300 p-1">
+              <ul className="lg:flex lg:flex-row flex-col mt-5 justify-between bg-gray-300 p-1">
                 <li
-                  className={`hover:cursor-pointer hover:bg-slate-50 transition duration-1000 ease-in-out text-center w-1/4 ${activeClass('/')}`}
+                  className={`hover:cursor-pointer hover:bg-slate-50 transition duration-1000 ease-in-out text-center lg:w-1/4 ${activeClass('/')}`}
                 >
                   <Link href="/">Featured</Link>
                 </li>
                 <li
-                  className={`hover:cursor-pointer hover:bg-slate-50 transition duration-1000 ease-in-out text-center w-1/4 ${activeClass('/kpi')}`}
+                  className={`hover:cursor-pointer hover:bg-slate-50 transition duration-1000 ease-in-out text-center lg:w-1/4 ${activeClass('/kpi')}`}
                 >
                   <Link href="/kpi">KPI</Link>
                 </li>
                 <li
-                  className={`hover:cursor-pointer hover:bg-slate-50 transition duration-1000 ease-in-out text-center w-1/4  ${activeClass('/layouts')}`}
+                  className={`hover:cursor-pointer hover:bg-slate-50 transition duration-1000 ease-in-out text-center lg:w-1/4  ${activeClass('/layouts')}`}
                 >
                   <Link href="/layouts">Layouts</Link>
                 </li>
                 <li
-                  className={`hover:cursor-pointer hover:bg-slate-50 transition duration-1000 ease-in-out text-center w-1/4  ${activeClass('/storyboards')}`}
+                  className={`hover:cursor-pointer hover:bg-slate-50 transition duration-1000 ease-in-out text-center lg:w-1/4  ${activeClass('/storyboards')}`}
                 >
                   <Link href="/storyboards">Storyboards</Link>
                 </li>

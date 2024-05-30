@@ -17,7 +17,7 @@ export default function LayoutModal({ params }: { params: { id: number } }) {
     <div className="flex items-center justify-center h-screen">
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 text-black">
-          <div className="bg-white rounded shadow-lg w-1/3">
+          <div className="bg-white rounded shadow-lg lg:w-1/3 w-screen">
             <header className="px-4 py-2 bg-black-200 border-b border-gray-300 rounded-t text-black">
               <h2 className="text-lg">{search.description}</h2>
             </header>

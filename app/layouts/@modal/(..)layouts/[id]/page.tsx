@@ -14,7 +14,7 @@ export default function LayoutModal({ params }: { params: { id: number } }) {
   return (
     <div className="flex items-center justify-center">
       {isOpen && (
-        <div className="fixed inset-0 flex flex-wrap items-center justify-center z-50 text-black max-w-full overflow-auto">
+        <div className="fixed inset-0 flex flex-wrap items-center justify-center z-50 text-black max-w-full overflow-auto bg-white">
           <div
             className="bg-white rounded shadow-lg mt-5 top-10"
             style={{ maxWidth: '768px', maxHeight: '100vh' }}
@@ -43,26 +43,26 @@ export default function LayoutModal({ params }: { params: { id: number } }) {
                   })}
                 </div>
 
-                <div className="flex flex-row justify-between items-stretch">
+                <div className="lg:flex lg:flex-row sm:flex-col justify-between items-stretch">
                   <div className="flex flex-col">
                     <div className="text-medium">{search.kpiBeingUsed}</div>
                     <div className="text-gray-500 text-sm">Used</div>
                   </div>
-                  <div className="flex flex-col border-l-2 border-gray-300">
-                    <div className="text-medium ml-20">Universal</div>
-                    <div className="ml-20 text-gray-500 text-sm">Type</div>
+                  <div className="flex flex-col lg:border-l-2 lg:border-gray-300">
+                    <div className="text-medium lg:ml-20">Universal</div>
+                    <div className="lg:ml-20 text-gray-500 text-sm">Type</div>
                   </div>
-                  <div className="flex flex-col border-l-2 border-gray-300">
-                    <div className="ml-20 text-medium">
+                  <div className="flex flex-col lg:border-l-2 lg:border-gray-300">
+                    <div className="lg:ml-20 text-medium">
                       {search.amountOfPages}
                     </div>
-                    <div className="ml-20 text-gray-500 text-sm">Pages</div>
+                    <div className="lg:ml-20 text-gray-500 text-sm">Pages</div>
                   </div>
-                  <div className="flex flex-col border-l-2 border-gray-300">
-                    <div className="ml-20 text-medium">
+                  <div className="flex flex-col lg:border-l-2 lg:border-gray-300">
+                    <div className="lg:ml-20 text-medium">
                       {search.lastUpdated}
                     </div>
-                    <div className="ml-20 text-gray-500 text-sm">
+                    <div className="lg:ml-20 text-gray-500 text-sm">
                       Last updated
                     </div>
                   </div>
@@ -81,7 +81,7 @@ export default function LayoutModal({ params }: { params: { id: number } }) {
                   <h2 className="text-xl font-medium ml-4 mt-5">
                     Business Questions
                   </h2>
-                  <div className="grid grid-cols-2 gap-4 border ml-5 mx-auto">
+                  <div className="grid lg:grid-cols-2  grid-cols-1 lg:gap-4 gap-2 border ml-5 mx-auto">
                     {search.kpi.businessQuestions.map((item, index) => (
                       <div
                         key={index}

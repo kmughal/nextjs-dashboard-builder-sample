@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 import { mockKpis } from '../_data';
 import { useKpiStore } from '../_stores';
 
-
 export default function KpiPage() {
   const router = useRouter();
   const filteredKpis = useKpiStore((state) => state.kpis);
@@ -21,7 +20,7 @@ export default function KpiPage() {
       <div className="text-left">
         <h2 className="text-2xl font-medium">{data.title}</h2>
         <p className="text-gray-500 mt-2 text-sm mb-5">{data.description}</p>
-        <div className="grid grid-cols-2 gap-4 border ml-5 mx-auto">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 border lg:ml-5 md:ml-5 sm:ml-[-5] mx-auto">
           {data.items.map((item, index) => (
             <div
               key={item.id}
@@ -30,7 +29,7 @@ export default function KpiPage() {
                 router.push(`/kpi/${item.id}`);
               }}
             >
-              <div className="border border-gray-200 m-4 rounded bg-gray-200 w-36 h-20"></div>
+              <div className="border border-gray-200 m-4 rounded bg-gray-200 w-36 h-20 hidden lg:block"></div>
 
               <div className="flex flex-col justify-center">
                 <h3 className="font-medium">{item.description}</h3>

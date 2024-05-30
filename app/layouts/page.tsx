@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { mockLayouts } from '../_data';
- 
+
 export default function LayoutsPage() {
   const data = mockLayouts;
   const router = useRouter();
@@ -13,7 +13,7 @@ export default function LayoutsPage() {
           This is a generic page where you can render all the current supported
           layouts.
         </p>
-        <div className="grid grid-cols-2 gap-4 border ml-5 mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 gap-2 border lg:ml-5 md:ml-5 sm:ml-[-5] mx-auto">
           {data.map((item, index) => (
             <div
               key={item.id}
@@ -22,7 +22,7 @@ export default function LayoutsPage() {
                 router.push(`/layouts/${item.id}`);
               }}
             >
-              <div className="border border-gray-200 m-4 rounded bg-gray-200 w-36 h-20"></div>
+              <div className="border border-gray-200 m-2 rounded bg-gray-200 w-[140px] h-20 hidden lg:block"></div>
 
               <div className="flex flex-col justify-center">
                 <h3 className="font-medium">{item.layoutName}</h3>
